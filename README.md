@@ -109,6 +109,6 @@ predictors_train, predictors_test, response_train, response_test = train_test_sp
 
 ### Support Vector Regression
 
-![](images/SVR_output.png)
+![](Images/SVR_output.png)
 
 We can see from the above scores that the KNN model provides us with the most accurate predictions of car prices. For this reason, we will propose that the firm implement our K Nearest Neighbours algorithm to most accurately predict car prices for the American market.
