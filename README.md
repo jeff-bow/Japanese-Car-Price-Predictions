@@ -36,8 +36,10 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 Before applying the regression models the dataset needs to be prepared. First, we will define our x/predictors and y/response variables.
 
 ``` python
-response = us_car_prices[["price"]]
-predictors = us_car_prices.drop(["price"],axis=1)
+# Assigning the 'price' column to the 'response' variable
+response = car_prices_us[['price']]
+# Assigning all of the columns except 'price' to the 'predictors' variable
+predictors = car_prices_us.drop(['price'], axis=1)
 ```
 
 ### Irrelevant Data
@@ -45,10 +47,11 @@ predictors = us_car_prices.drop(["price"],axis=1)
 We must then look at removing features that measure the same or similar metrics, for example, we can drop `"carwidth"` and `"carheight"` and keep `"carlength"`. We can also remove some features that we know will not impact the asking price of the vehicle.
 
 ``` python
-numeric_columns = us_car_prices.iloc[:,10:]
-numeric_columns = numeric_columns.drop(
-    ["symboling","stroke","compressionratio","peakrpm",
-     "horsepower","carlength","carheight","citympg"],axis=1)
+# Selecting numeric predictors for correlation analysis
+numeric_columns = car_prices_us.iloc[:,10:]
+numeric_columns = numeric_columns.drop(["compressionratio", "stroke", "symboling", "peakrpm",
+                                        "horsepower", "carlength", "citympg", "carheight"], 
+                                       axis=1)
 ```
 
 With these removed, we can check which of the remaining features have a high correlation with one another. Using a correlation matrix and plotting it with a heatmap we can see that all of the remaining features are okay to keep. We can now drop the features we found to be irrelevant from our `"predictors"` variable at this point.
