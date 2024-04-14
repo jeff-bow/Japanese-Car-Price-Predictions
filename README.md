@@ -1,6 +1,6 @@
 # Car Price Predictions Using Supervised Learning Models
 
-## About
+# About
 
 A Japanese car company that has recently attempted to launch vehicles in the US market. During this attempt, sales were low as an initial analysis resulted in overpriced vehicles. Initial price estimates were based on previous experience setting prices in the Japanese market by executives within Akashi. This process relied heavily on intuition and assumptions, like factors influencing prices in Japan would being the same in the US.
 
