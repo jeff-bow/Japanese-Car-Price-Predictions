@@ -75,7 +75,7 @@ predictors = pd.get_dummies(predictors,drop_first=True)
 
 # Creating the Models
 
-# Linear Regression
+### Linear Regression
 
 Having prepared the data we can begin to create models. The first model we will create is a linear regression model. After we fit the model to our data we will measure the accuracy using R Squared and adjusted R Squared.
 
@@ -102,15 +102,15 @@ predictors_train, predictors_test, response_train, response_test = train_test_sp
     predictors, response, test_size=0.2, random_state=42)
 ```
 
-# Decision Trees
+### Decision Trees
 
 ![](Images/decisiontree_output.png)
 
-# K Nearest Neighbours
+### K Nearest Neighbours
 
 ![](Images/KNN_output.png)
 
-# Support Vector Regression
+### Support Vector Regression
 
 ![](Images/SVR_output.png)
 
