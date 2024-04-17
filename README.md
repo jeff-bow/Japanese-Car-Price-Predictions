@@ -15,7 +15,7 @@ Skills Showcased
 
 [View more projects like this!](https://jeff-bow.github.io/)
 
-## Libraries Overview
+# Libraries Overview
 
 The following Python libraries will be used for this project.
 
@@ -31,7 +31,7 @@ from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 ```
 
-## Preparing the Data
+# Preparing the Data
 
 Before applying the regression models the dataset needs to be prepared. First, we will define our x/predictors and y/response variables.
 
@@ -42,7 +42,7 @@ response = car_prices_us[['price']]
 predictors = car_prices_us.drop(['price'], axis=1)
 ```
 
-### Irrelevant Data
+# Irrelevant Data
 
 We must then look at removing features that measure the same or similar metrics, for example, we can drop `"carwidth"` and `"carheight"` and keep `"carlength"`. We can also remove some features that we know will not impact the asking price of the vehicle.
 
@@ -65,7 +65,7 @@ predictors = predictors.drop(["compressionratio", "stroke", "symboling", "peakrp
                             axis=1)
 ```
 
-### Categorical Data
+# Categorical Data
 
 The linear regression models cannot deal with non-numeric data, as a work around for this we will convert categorical data to numeric. In this case, we will use the one-hot encoding method, which will convert each categorical column into two binary columns, one true and one false.
 
@@ -73,9 +73,9 @@ The linear regression models cannot deal with non-numeric data, as a work around
 predictors = pd.get_dummies(predictors,drop_first=True)
 ```
 
-## Creating the Models
+# Creating the Models
 
-### Linear Regression
+# Linear Regression
 
 Having prepared the data we can begin to create models. The first model we will create is a linear regression model. After we fit the model to our data we will measure the accuracy using R Squared and adjusted R Squared.
 
@@ -91,7 +91,7 @@ As we can see above the model is highly accurate, now we have to check if the mo
 
 As per the above plots, we can see that the data is normally distributed, however, the model was far more likely to provide inaccurate predictions for cheaper cars than for expensive ones. So this model must be rejected.
 
-## Non-Parametric Models
+# Non-Parametric Models
 
 These models will be less accurate than linear regression but they can violate assumptions and still be acceptable to use. We will use three different models to see which proves to be the most accurate.
 
@@ -102,15 +102,15 @@ predictors_train, predictors_test, response_train, response_test = train_test_sp
     predictors, response, test_size=0.2, random_state=42)
 ```
 
-### Decision Trees
+# Decision Trees
 
 ![](Images/decisiontree_output.png)
 
-### K Nearest Neighbours
+# K Nearest Neighbours
 
 ![](Images/KNN_output.png)
 
-### Support Vector Regression
+# Support Vector Regression
 
 ![](Images/SVR_output.png)
 
